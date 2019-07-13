@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <style>
+
+    body{
+          font-size: 'Source Sans Pro';
+          background-color: #e65656;
+          color: #ffffff;
+      }
+      .input_c{
+        height: 50px;
+      }
+    #result{
+      font-size: 30px;
+      font-weight: 100;
+      padding-top: 20px;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+        
+        
+    }
+    
+    </style>
+
+  <title>별풍선 백두산 계산기</title>
+</head>
+<div class="container">
+<body>
+  <h1>별풍선 계산기</h1>
+  <input class="input_c" id="input_c" type="number" min="0" step="1" placeholder="ex)백두산이면 100을 적으세요." onkeyup="enterkey()">
+  <br>
+  <button class="button" onclick="myFunction()" >click!!</button>
+
+  <div id="result">"백두산이란
+  <br> 1부터100까지 순서대로 별풍선을 선물하는것을
+  의미합니다."</div>
+</body>
+</div>
+<script>
+  
+  
+  
+  function myFunction() {
+    
+  var n = Number(document.getElementById("input_c").value);
+//  console.log(n);
+  if (Number.isNaN(n) || n < 1) return 0;
+  var result = ((1 + n) * n) / 2;
+  document.getElementById("result").innerHTML = "총별풍선 가격은 " + result+"00원 입니다.";
+    
+
+}
+
+function enterkey() {
+        if (window.event.keyCode == 13) {
+ 
+             // 엔터키가 눌렸을 때 실행할 내용
+             myFunction();
+        }
+}
+ 
+
+
+
+
+//  this.num = 1;
+//  this.sum = this.result;
+//  this.result = 0;
+</script>
+
+</html>
+
+
+
+<style>
+  .button {
+    display: inline-block;
+    padding: 15px 55px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 10px;
+    margin-top: 30px;
+
+
+  }
+
+  .button:hover {
+    background-color: #3e8e41;
+
+  }
+
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+  }
+</style>
